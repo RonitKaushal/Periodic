@@ -14,7 +14,7 @@ import Image from "next/image";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { FilterDrawer } from "@/components/filter-drawer";
 import { Button } from "@/components/ui/button";
-import { Filter, Undo2, X } from "lucide-react";
+import { Filter, Undo2 } from "lucide-react";
 
 // Categories from the periodic table
 const CATEGORIES = Array.from(
