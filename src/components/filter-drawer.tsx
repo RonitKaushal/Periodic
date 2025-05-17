@@ -119,14 +119,18 @@ export function FilterDrawer({
               {categories
                 .filter((c) => c !== "All")
                 .map((c) => (
-                  <Badge
-                    key={c}
-                    variant={category === c ? "default" : "outline"}
-                    className={`cursor-pointer ${getCategoryColorClass(c)}`}
-                    onClick={() => onCategoryChange(c)}
-                  >
-                    {c}
-                  </Badge>
+              <Badge
+                key={c}
+                variant={category === c ? "default" : "outline"}
+                className={`cursor-pointer ${getCategoryColorClass(c)} ${
+                  category === c
+                    ? "border-2 border-primary dark:border-t-0 dark:border-l-0 dark:border-r-0"
+                    : "border-0 !important"
+                }`}
+                onClick={() => onCategoryChange(c)}
+              >
+                {c}
+              </Badge>
                 ))}
             </div>
           </div>

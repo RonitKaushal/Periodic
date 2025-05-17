@@ -220,7 +220,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-start items-center bg-purple-100/40 dark:bg-background gap-8 py-10 pt-0 px-4">
+    <div className="flex flex-col justify-start items-center h-full min-h-[100vh] bg-purple-100/40 dark:bg-background gap-8 py-10 pt-0 px-4">
       {/* Header */}
       <div className="flex flex-col md:flex-row w-full justify-between items-center md:max-w-[90%]">
         <div className="flex items-center justify-center w-auto">
@@ -285,19 +285,25 @@ export default function Home() {
         </div>
 
         <div className="hidden md:flex justify-center items-center bottom-1  rounded-full space-x-2 border-foreground/20">
-          <Button
-            size="icon"
-            className="border-0 bg-foreground rounded-full md:px-14"
-            onClick={() => {
-              setCategory("All");
-              setGroup("All");
-              setState("All");
-              setSearch("");
-            }}
-          >
-            <p className="hidden md:block text-background">Reset</p>
-            <Filter className="text-background h-4 w-4" />
-          </Button>
+          {(category !== "All" ||
+            group !== "All" ||
+            state !== "All" ||
+            search !== "") && (
+
+            <Button
+              size="icon"
+              className="border-0 bg-foreground rounded-full md:px-14"
+              onClick={() => {
+                setCategory("All");
+                setGroup("All");
+                setState("All");
+                setSearch("");
+              }}
+            >
+              <p className="hidden md:block text-background">Reset</p>
+              <Filter className="text-background h-4 w-4" />
+            </Button>
+          )}
           <FilterDrawer
             group={group}
             state={state}
